@@ -2,37 +2,55 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo_app_android"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/logo_app_android_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AplikacjaProjektZespolowyPWr"
-        tools:targetApi="31">
+        tools:targetApi="31"
+        tools:ignore="DiscouragedApi">
         <activity
             android:name=".ui.auth.RegisterSummaryActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity"
             android:exported="false" />
         <activity
             android:name=".ui.auth.RegisterUserActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity"
             android:exported="false" />
         <activity
             android:name=".ui.auth.RegisterPasswordActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity"
             android:exported="false"
             android:theme="@style/Theme.AplikacjaProjektZespolowyPWr" />
         <activity
             android:name=".ui.auth.RegisterEmailActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity"
             android:exported="false" />
         <activity
             android:name=".ui.others.LanguageActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity"
             android:exported="false" />
         <activity
             android:name=".ui.others.SettingsFormActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity"
             android:exported="false" />
         <activity
             android:name=".ui.auth.LoginActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity"
             android:exported="false" />
         <activity
             android:name=".ui.auth.AuthActivity"

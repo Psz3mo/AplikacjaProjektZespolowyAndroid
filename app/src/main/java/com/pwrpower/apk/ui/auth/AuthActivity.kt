@@ -7,11 +7,13 @@ import android.widget.Button
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.pwrpower.apk.R
 import com.pwrpower.apk.ui.main.MainActivity
 import com.pwrpower.apk.ui.others.SettingsFormActivity
+import androidx.core.content.edit
 
 class AuthActivity : AppCompatActivity() {
 
@@ -21,6 +23,18 @@ class AuthActivity : AppCompatActivity() {
 
         val preferences: SharedPreferences = getSharedPreferences("AppPreferences", MODE_PRIVATE)
         val isLoggedIn: Boolean = preferences.getBoolean("isLoggedIn", false)
+
+        if (!preferences.contains("DARK_MODE")) {
+            preferences.edit { putBoolean("DARK_MODE", true) }
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            val isDarkMode = preferences.getBoolean("DARK_MODE", false)
+            if (isDarkMode) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+        }
 
         if (!isLoggedIn) { // Check if user is logged in
             setContentView(R.layout.activity_auth)

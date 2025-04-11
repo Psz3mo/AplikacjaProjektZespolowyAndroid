@@ -1,38 +1,75 @@
 <resources>
-    <string name="app_name">Unkeyed</string>
+    <!-- Main -->>
+    <string name="app_name">Mały Klaksonik</string>
+
+    <!--  Auth  -->
     <string name="login">Login</string>
     <string name="or">or</string>
     <string name="sign_up">Sign Up</string>
     <string name="description">Welcome to our app,\nwhere you can rent your car just by walking up to it!</string>
+    <string name="settings_icon">Settings Icon</string>
+    <string name="logo">Logo</string>
+
+    <!-- Login -->
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="login_text">Login to your account</string>
-    <string name="logo">Logo</string>
+    <string name="login_error_1">Please fill in all fields</string>
+    <string name="login_error_2">Email or password is incorrect</string>
+    <string name="login_error_3">Server error</string>
+    <string name="login_success">Login successful</string>
+
+    <!-- Settings -->
     <string name="settings">Settings</string>
     <string name="language">Language:</string>
     <string name="language_icon">Language Icon</string>
     <string name="theme">Dark mode</string>
-    <string name="settings_icon">Settings Icon</string>
+
+    <!-- Language -->
     <string name="select_language">Select language</string>
     <string name="language_poland">Polski</string>
     <string name="language_england">English</string>
     <string name="language_germany">Deutsch</string>
-    <string name="next">Next</string>
+
+    <!--  RegisterEmail  -->
     <string name="email_text">Enter your email</string>
+    <string name="email_error_1">Email cannot be empty</string>
+    <string name="email_error_2">Email is not valid</string>
+    <string name="email_error_3">Email is already taken</string>
+
+    <!--  RegisterPassword  -->
     <string name="password_text">Enter your password</string>
     <string name="password_req_1">Minimum of 8 characters</string>
     <string name="password_req_2">At least one number</string>
     <string name="password_req_3">At least one capital letter</string>
     <string name="password_req_4">At least one lowercase letter</string>
     <string name="password_req_5">At least one special character</string>
+
+    <!-- RegisterUser -->
     <string name="register_user_text">Complete your details</string>
     <string name="name">Name</string>
     <string name="lastname">Lastname</string>
     <string name="phone">Phone</string>
     <string name="license_number">License number</string>
     <string name="license_exp">License expiration date</string>
+    <string name="name_error">Enter a valid name</string>
+    <string name="surname_error">Enter a valid surname</string>
+    <string name="phone_error">Enter a valid phone number</string>
+    <string name="phone_error_taken">Phone number is already taken</string>
+    <string name="license_number_error">Enter a valid license number</string>
+    <string name="license_exp_error">License date required</string>
+
+    <!-- RegisterSummary -->
     <string name="summary">Summary</string>
     <string name="user_icon">User Icon</string>
     <string name="register">Register</string>
+    <string name="error_register">Failed to register</string>
+    <string name="error_unknown">Unknown error</string>
+    <string name="register_good">User registered</string>
+    <string name="date_invalid">Invalid date</string>
+
+    <!-- Others -->
+    <string name="next">Next</string>
+
 </resources>
