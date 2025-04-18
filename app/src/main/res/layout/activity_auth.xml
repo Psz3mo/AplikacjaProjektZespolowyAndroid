@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wave_login"
     tools:context=".ui.auth.AuthActivity">
 
     <ImageView
@@ -20,53 +19,93 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="10dp"
         android:contentDescription="@string/logo"
         android:src="@drawable/logo_text"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="@string/background_main"
+        android:src="@drawable/background_des_1"
+        app:layout_constraintBottom_toTopOf="@+id/descriptionTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/descriptionTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
+        android:minHeight="100dp"
         android:layout_marginStart="40dp"
-        android:layout_marginEnd="80dp"
-        android:fontFamily="@font/rowdies"
-        android:layout_marginBottom="50dp"
-        android:text="@string/description"
-        android:textColor="@color/text"
-        android:textSize="25sp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="60dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/description_1"
+        android:textColor="@color/onBackground"
+        android:textFontWeight="800"
+        android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageView
+        android:id="@+id/backgroundImageNext"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="@string/background_main"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/descriptionTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/descriptionTextViewNext"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:minHeight="100dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="60dp"
+        android:visibility="gone"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/onBackground"
+        android:textFontWeight="800"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/loginButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/loginButton"
-        style="@style/Widget.MaterialComponents.Button"
+        style="@style/Widget.AplikacjaProjektZespolowyPWr.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:fontFamily="@font/rowdies"
-        android:paddingVertical="10dp"
+        android:background="@drawable/gradient_button"
+        android:fontFamily="@font/roboto_bold"
+        android:paddingVertical="5dp"
         android:text="@string/login"
         android:textAllCaps="true"
-        app:cornerRadius="5dp"
+        app:backgroundTint="@null"
         app:layout_constraintBottom_toTopOf="@+id/orTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="VisualLintButtonSize" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <View
         android:id="@+id/leftDivider"
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:background="@color/gray"
+        android:background="@color/secondary"
         android:layout_marginHorizontal="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/orTextView"
@@ -78,9 +117,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="3dp"
-        android:fontFamily="@font/rowdies"
+        android:fontFamily="@font/roboto_bold"
         android:text="@string/or"
-        android:textColor="@color/gray"
+        android:textColor="@color/secondary"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@id/rightDivider"
         app:layout_constraintStart_toEndOf="@id/leftDivider"
@@ -91,7 +130,7 @@
         android:id="@+id/rightDivider"
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:background="@color/gray"
+        android:background="@color/secondary"
         android:layout_marginHorizontal="30dp"
         app:layout_constraintStart_toEndOf="@id/orTextView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,15 +140,16 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/signUpButton"
         style="@style/Widget.MaterialComponents.Button"
+        android:background="@drawable/gradient_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/rowdies"
+        android:fontFamily="@font/roboto_bold"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:paddingVertical="10dp"
+        android:paddingVertical="5dp"
         android:text="@string/sign_up"
         android:textAllCaps="true"
-        app:cornerRadius="5dp"
+        app:backgroundTint="@null"
         android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

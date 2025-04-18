@@ -5,10 +5,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.textfield.TextInputEditText
@@ -41,6 +44,10 @@ class RegisterUserActivity : AppCompatActivity() {
         phoneInput.setText("+48")
         phoneInput.text?.let { phoneInput.setSelection(it.length) }
 
+        val toolbar = findViewById<Toolbar>(R.id.userToolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        toolbar.navigationIcon?.setTint(ContextCompat.getColor(this, R.color.onBackground))
 
         nameInput.addTextChangedListener(object : TextWatcher {
             private var isEditing = false
@@ -235,5 +242,15 @@ class RegisterUserActivity : AppCompatActivity() {
                 callback(false)
             }
         })
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }

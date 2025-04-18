@@ -5,22 +5,63 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wave_form"
     tools:context=".ui.auth.LoginActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/loginToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:titleTextColor="@color/onBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/toolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_bold"
+                android:maxLines="1"
+                android:paddingEnd="56dp"
+                android:text="@string/login"
+                android:textColor="@color/onBackground"
+                android:textFontWeight="500"
+                android:textSize="26sp"
+                tools:ignore="RtlSymmetry" />
+        </FrameLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:id="@+id/toolbarView"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@drawable/gradient_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginToolbar" />
+
     <TextView
+        android:id="@+id/textViewLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="30dp"
-        android:textColor="@color/text"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/onBackground"
         android:text="@string/login_text"
-        android:fontFamily="@font/rowdies"
-        android:textSize="28sp"
+        android:fontFamily="@font/roboto"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/emailTextField" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbarView" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailTextField"
@@ -28,7 +69,7 @@
         android:layout_height="wrap_content"
         style="@style/Widget.AplikacjaProjektZespolowyPWr.EditText"
         android:layout_margin="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/passwordTextField"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:startIconDrawable="@drawable/email_icon"
@@ -54,7 +95,7 @@
         android:layout_height="wrap_content"
         style="@style/Widget.AplikacjaProjektZespolowyPWr.EditText"
         android:layout_margin="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/passwordForgot"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextField"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:startIconDrawable="@drawable/password_icon"
@@ -79,30 +120,30 @@
         android:id="@+id/passwordForgot"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginTop="20dp"
         android:text="@string/forgot_password"
-        android:textColor="@color/text_gray"
+        android:textColor="@color/onBackground"
         android:textAlignment="center"
-        android:fontFamily="@font/rowdies"
+        android:fontFamily="@font/roboto_bold"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/loginButton"
+        app:layout_constraintTop_toBottomOf="@+id/passwordTextField"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/loginButton"
         style="@style/Widget.MaterialComponents.Button"
+        android:background="@drawable/gradient_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:fontFamily="@font/rowdies"
+        android:fontFamily="@font/roboto_bold"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
         android:paddingVertical="10dp"
         android:text="@string/login"
         android:textAllCaps="true"
-        app:cornerRadius="5dp"
+        app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

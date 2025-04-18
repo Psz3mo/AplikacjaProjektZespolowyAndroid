@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -67,6 +69,11 @@ class RegisterPasswordActivity : AppCompatActivity() {
                 checkPasswordRequirements(s.toString())
             }
         })
+
+        val toolbar = findViewById<Toolbar>(R.id.passwordToolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        toolbar.navigationIcon?.setTint(ContextCompat.getColor(this, R.color.onBackground))
     }
 
     private fun updateRequirement(textView: TextView, isMet: Boolean) {
@@ -76,6 +83,16 @@ class RegisterPasswordActivity : AppCompatActivity() {
         } else {
             textView.setTextColor(ContextCompat.getColor(this, R.color.red_error))
             textView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.close_icon, 0, 0, 0)
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }

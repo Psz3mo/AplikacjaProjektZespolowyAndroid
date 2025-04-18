@@ -5,29 +5,77 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wave_user"
     tools:context=".ui.auth.RegisterUserActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/userToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:titleTextColor="@color/onBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/toolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_bold"
+                android:maxLines="1"
+                android:paddingEnd="56dp"
+                android:text="@string/register"
+                android:textColor="@color/onBackground"
+                android:textFontWeight="500"
+                android:textSize="26sp"
+                tools:ignore="RtlSymmetry" />
+        </FrameLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:id="@+id/toolbarView"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@drawable/gradient_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userToolbar" />
+
+    <TextView
+        android:id="@+id/userTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/register_user_text"
+        android:textColor="@color/onBackground"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="TextContrastCheck" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="50dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/nextButton">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/text"
-            android:text="@string/register_user_text"
-            android:fontFamily="@font/rowdies"
-            android:layout_marginBottom="30dp"
-            android:textSize="28sp" />
+        app:layout_constraintTop_toBottomOf="@+id/userTextView">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/nameTextField"
@@ -141,16 +189,17 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/nextButton"
         style="@style/Widget.MaterialComponents.Button"
+        android:background="@drawable/gradient_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:fontFamily="@font/rowdies"
+        android:fontFamily="@font/roboto_bold"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
         android:paddingVertical="10dp"
         android:text="@string/summary"
+        app:backgroundTint="@null"
         android:textAllCaps="true"
-        app:cornerRadius="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

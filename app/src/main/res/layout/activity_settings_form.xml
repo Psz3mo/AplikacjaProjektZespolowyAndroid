@@ -5,29 +5,54 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wave_up_mini"
     tools:context=".ui.others.SettingsFormActivity">
 
-    <TextView
-        android:id="@+id/settingsTextView"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/settingsToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        android:textAlignment="center"
-        android:textColor="@color/text"
-        android:text="@string/settings"
-        android:fontFamily="@font/rowdies"
-        android:textSize="30sp"
+        android:background="@color/background"
+        app:titleTextColor="@color/onBackground"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/toolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_bold"
+                android:maxLines="1"
+                android:paddingEnd="56dp"
+                android:text="@string/settings"
+                android:textColor="@color/onBackground"
+                android:textFontWeight="500"
+                android:textSize="26sp"
+                tools:ignore="RtlSymmetry" />
+        </FrameLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:id="@+id/toolbarView"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@drawable/gradient_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingsToolbar" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/languageConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        app:layout_constraintTop_toBottomOf="@+id/settingsTextView"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -37,10 +62,10 @@
             android:layout_marginStart="30dp"
             android:layout_marginBottom="19dp"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/rowdies"
+            android:fontFamily="@font/roboto"
             android:text="@string/language"
-            android:textColor="@color/text"
-            android:textSize="25sp"
+            android:textColor="@color/onBackground"
+            android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -82,10 +107,10 @@
             android:layout_marginStart="30dp"
             android:layout_marginBottom="20dp"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/rowdies"
+            android:fontFamily="@font/roboto"
             android:text="@string/theme"
-            android:textColor="@color/text"
-            android:textSize="25sp"
+            android:textColor="@color/onBackground"
+            android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#261CDB</color>
-    <color name="secondary">#0C0455</color>
-    <color name="accent">#0600C2</color>
-    <color name="background">#05050D</color>
+    <color name="primary">#825efc</color>
+    <color name="primaryVariant">#bca1f8</color>
+    <color name="secondary">#B77EF4</color>
+    <color name="accent">#bca1f8</color>
+    <color name="background">#0f0a1a</color>
+    <color name="onBackground">#e3dbf5</color>
+    <color name="onPrimary">#e3dbf5</color>
+    <color name="surface">#251b3f</color>
+
     <color name="text">#EBE9fC</color>
     <color name="text_main">#EBE9fC</color>
     <color name="textOnPrimary">#EBE9fC</color>
