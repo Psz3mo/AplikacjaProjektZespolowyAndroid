@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.SettingsFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="10dp"
+        android:paddingBottom="150dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="10dp"
+            android:id="@+id/settingsLayoutAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/settingsAccountIcon"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="10dp"
+                android:contentDescription="@string/user_icon"
+                android:src="@drawable/user_icon_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutAccount" />
+
+            <TextView
+                android:id="@+id/mainNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/settings_temp_user"
+                android:textColor="@color/onBackground"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/settingsAccountIcon"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutAccount"
+                app:layout_constraintBottom_toBottomOf="@+id/settingsLayoutAccount" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/settingsLayoutTheme"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/settingsThemeIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginStart="20dp"
+                android:contentDescription="@string/moon_icon"
+                android:src="@drawable/moon_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutTheme" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/settings_theme"
+                android:textColor="@color/onBackground"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/settingsLayoutTheme"
+                app:layout_constraintEnd_toStartOf="@+id/settingsThemeSwitch"
+                app:layout_constraintStart_toEndOf="@+id/settingsThemeIcon"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutTheme" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/settingsThemeSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:checked="false"
+                android:contentDescription="@string/theme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/settings_divider_profile"
+            android:textColor="@color/onBackground"
+            android:textSize="14sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/settingsLayoutEditUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/settingsEditUserIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginStart="20dp"
+                android:contentDescription="@string/user_icon"
+                android:src="@drawable/user_icon_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutEditUser" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/settings_edit_profile"
+                android:textColor="@color/onBackground"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/settingsLayoutEditUser"
+                app:layout_constraintEnd_toStartOf="@+id/settingsEditUserIconArrow"
+                app:layout_constraintStart_toEndOf="@+id/settingsEditUserIcon"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutEditUser" />
+
+            <ImageView
+                android:id="@+id/settingsEditUserIconArrow"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="@string/arrow_icon"
+                android:src="@drawable/arrow_right"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutEditUser" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/settingsLayoutChangePassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/settingsChangePasswordIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginStart="20dp"
+                android:contentDescription="@string/password_icon"
+                android:src="@drawable/password_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutChangePassword" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/settings_change_password"
+                android:textColor="@color/onBackground"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/settingsLayoutChangePassword"
+                app:layout_constraintEnd_toStartOf="@+id/settingsChangePasswordIconArrow"
+                app:layout_constraintStart_toEndOf="@+id/settingsChangePasswordIcon"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutChangePassword" />
+
+            <ImageView
+                android:id="@+id/settingsChangePasswordIconArrow"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="@string/arrow_icon"
+                android:src="@drawable/arrow_right"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutChangePassword" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/settingsLayoutChangeEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/settingsChangeEmailIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginStart="20dp"
+                android:contentDescription="@string/email_icon"
+                android:src="@drawable/email_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutChangeEmail" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/settings_change_email"
+                android:textColor="@color/onBackground"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/settingsLayoutChangeEmail"
+                app:layout_constraintEnd_toStartOf="@+id/settingsChangeEmailIconArrow"
+                app:layout_constraintStart_toEndOf="@+id/settingsChangeEmailIcon"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutChangeEmail" />
+
+            <ImageView
+                android:id="@+id/settingsChangeEmailIconArrow"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="@string/arrow_icon"
+                android:src="@drawable/arrow_right"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutChangeEmail" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/settings_divider_application"
+            android:textColor="@color/onBackground"
+            android:textSize="14sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/settingsLayoutBalance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/settingsBalanceIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginStart="20dp"
+                android:contentDescription="@string/balance_icon"
+                android:src="@drawable/dollar_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutBalance" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/settings_balance"
+                android:textColor="@color/onBackground"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/settingsLayoutBalance"
+                app:layout_constraintEnd_toStartOf="@+id/settingsBalanceIconArrow"
+                app:layout_constraintStart_toEndOf="@+id/settingsBalanceIcon"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutBalance" />
+
+            <ImageView
+                android:id="@+id/settingsBalanceIconArrow"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="@string/arrow_icon"
+                android:src="@drawable/arrow_right"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutBalance" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/settingsLayoutHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/settingsHistoryIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginStart="20dp"
+                android:contentDescription="@string/history_icon"
+                android:src="@drawable/car_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutHistory" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/settings_history"
+                android:textColor="@color/onBackground"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/settingsLayoutHistory"
+                app:layout_constraintEnd_toStartOf="@+id/settingsHistoryIconArrow"
+                app:layout_constraintStart_toEndOf="@+id/settingsHistoryIcon"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutHistory" />
+
+            <ImageView
+                android:id="@+id/settingsHistoryIconArrow"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="@string/arrow_icon"
+                android:src="@drawable/arrow_right"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutHistory" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/settings_divider_regional"
+            android:textColor="@color/onBackground"
+            android:textSize="14sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/settingsLayoutLanguage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/settingsLanguageIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginStart="20dp"
+                android:contentDescription="@string/world_icon"
+                android:src="@drawable/world_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutLanguage" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/settings_language"
+                android:textColor="@color/onBackground"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/settingsLayoutLanguage"
+                app:layout_constraintEnd_toStartOf="@+id/settingsLanguageIconImage"
+                app:layout_constraintStart_toEndOf="@+id/settingsLanguageIcon"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutLanguage" />
+
+            <ImageView
+                android:id="@+id/settingsLanguageIconImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="@string/language_icon"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:src="@drawable/flag_gb"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutLanguage" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/settingsLayoutLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/settingsLogoutIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginStart="20dp"
+                android:contentDescription="@string/logout_icon"
+                android:src="@drawable/logout_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutLogout" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/settings_logout"
+                android:textColor="@color/onBackground"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/settingsLayoutLogout"
+                app:layout_constraintEnd_toStartOf="@+id/settingsLogoutIconArrow"
+                app:layout_constraintStart_toEndOf="@+id/settingsLogoutIcon"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutLogout" />
+
+            <ImageView
+                android:id="@+id/settingsLogoutIconArrow"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="@string/arrow_icon"
+                android:src="@drawable/arrow_right"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/settingsLayoutLogout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+</ScrollView>

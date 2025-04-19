@@ -22,3 +22,11 @@ data class LoginModel(
     val email: String,
     val password: String
 )
+
+data class UserDataModel(
+    val name: String,
+    val surname: String,
+    val phone: String,
+    val licenseNumber: String,
+    val licenseExpiration: String
+)

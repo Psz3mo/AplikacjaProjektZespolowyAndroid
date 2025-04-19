@@ -62,6 +62,7 @@ class LoginActivity : AppCompatActivity() {
                                 if (loginResponse.success) {
                                     Toast.makeText(this@LoginActivity, getString(R.string.login_success), Toast.LENGTH_SHORT).show()
                                     preferences.edit { putBoolean("isLoggedIn", true) }
+                                    preferences.edit { putInt("accountId", response.body()?.userId ?: -1  ) }
                                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
                                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                                     startActivity(intent)

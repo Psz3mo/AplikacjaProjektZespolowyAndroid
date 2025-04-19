@@ -4,24 +4,39 @@ data class RegisterResponse(
     val success: Boolean,
     val message: String,
     val errors: List<String>? = null,
+    val userId: Int? = null
 )
 
 data class CheckEmailResponse(
     val success: Boolean,
     val exists: Boolean,
     val message: String,
-    val errors: List<String>? = null,
+    val errors: List<String>? = null
 )
 
 data class CheckPhoneResponse(
     val success: Boolean,
     val exists: Boolean,
     val message: String,
-    val errors: List<String>? = null,
+    val errors: List<String>? = null
 )
 
 data class LoginResponse(
     val success: Boolean,
     val message: String,
     val errors: List<String>? = null,
+    val userId: Int? = null
+)
+
+data class UserDataResponse(
+    val success: Boolean,
+    val message: String,
+    val errors: List<String>? = null,
+    val user: UserModel? = null
+)
+
+data class UpdateUserResponse(
+    val success: Boolean,
+    val message: String,
+    val errors: List<String>? = null
 )

@@ -64,44 +64,46 @@ class AuthActivity : AppCompatActivity() {
 
         if (!isLoggedIn) { // Check if user is logged in
             setContentView(R.layout.activity_auth)
+
+            descriptions = listOf(
+                getString(R.string.description_1),
+                getString(R.string.description_2),
+                getString(R.string.description_3)
+            )
+
+            ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+                val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+                v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+                insets
+            }
+
+            val loginButton: Button = findViewById(R.id.loginButton)
+            loginButton.setOnClickListener {
+                startActivity(Intent(this, LoginActivity::class.java))
+            }
+
+            val registerButton: Button = findViewById(R.id.signUpButton)
+            registerButton.setOnClickListener {
+                startActivity(Intent(this, RegisterEmailActivity::class.java))
+            }
+
+            val settingsButton: ImageView = findViewById(R.id.settingIcon)
+            settingsButton.setOnClickListener {
+                startActivity(Intent(this, SettingsFormActivity::class.java))
+            }
+
+            imageCurrent = findViewById(R.id.backgroundImage)
+            imageNext = findViewById(R.id.backgroundImageNext)
+            textCurrent = findViewById(R.id.descriptionTextView)
+            textNext = findViewById(R.id.descriptionTextViewNext)
+
+            handler.postDelayed(switchRunnable, interval)
+
         } else {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
+            return
         }
-
-        descriptions = listOf(
-            getString(R.string.description_1),
-            getString(R.string.description_2),
-            getString(R.string.description_3)
-        )
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
-
-        val loginButton: Button = findViewById(R.id.loginButton)
-        loginButton.setOnClickListener {
-            startActivity(Intent(this, LoginActivity::class.java))
-        }
-
-        val registerButton: Button = findViewById(R.id.signUpButton)
-        registerButton.setOnClickListener {
-            startActivity(Intent(this, RegisterEmailActivity::class.java))
-        }
-
-        val settingsButton: ImageView = findViewById(R.id.settingIcon)
-        settingsButton.setOnClickListener {
-            startActivity(Intent(this, SettingsFormActivity::class.java))
-        }
-
-        imageCurrent = findViewById(R.id.backgroundImage)
-        imageNext = findViewById(R.id.backgroundImageNext)
-        textCurrent = findViewById(R.id.descriptionTextView)
-        textNext = findViewById(R.id.descriptionTextViewNext)
-
-        handler.postDelayed(switchRunnable, interval)
     }
 
     override fun onDestroy() {

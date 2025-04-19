@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,24 +7,30 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:id="@+id/welcomeTextView"
-        android:layout_height="wrap_content"
-        android:text="Main Activity"
-        app:layout_constraintBottom_toTopOf="@id/logoutButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:background="@color/background"
+        android:layout_height="match_parent">
+    </FrameLayout>
 
-    <Button
-        android:id="@+id/logoutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Logout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeTextView" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:id="@+id/bottom_navigation_view"
+        android:layout_above="@+id/bottom_navigation"
+        android:background="@drawable/gradient_button"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:fitsSystemWindows="false"
+        android:background="@color/background"
+        app:itemIconTint="@color/primary"
+        app:itemTextColor="@color/primary"
+        app:labelVisibilityMode="selected"
+        app:menu="@menu/navigation_menu" />
+
+</RelativeLayout>

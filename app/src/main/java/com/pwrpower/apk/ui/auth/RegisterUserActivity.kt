@@ -186,31 +186,33 @@ class RegisterUserActivity : AppCompatActivity() {
             checkPhone(phone) { isAvailable ->
                 if (!isAvailable) {
                     phoneInput.error = getString(R.string.phone_error_taken)
+                    return@checkPhone
+                }
+                else{
+                    if (licenseNumber.isEmpty()) {
+                        licenseNumberInput.error = getString(R.string.license_number_error)
+                        return@checkPhone
+                    }
+
+                    if (!licenseExpDate.matches(Regex("\\d{1,2}/\\d{1,2}/\\d{4}"))) {
+                        licenseExpInput.error = getString(R.string.license_exp_error)
+                        return@checkPhone
+                    }
+
+                    val email = intent.getStringExtra("Email")
+                    val password = intent.getStringExtra("Password")
+
+                    val intent = Intent(this, RegisterSummaryActivity::class.java)
+                    intent.putExtra("Email", email)
+                    intent.putExtra("Password", password)
+                    intent.putExtra("Name", name)
+                    intent.putExtra("Surname", surname)
+                    intent.putExtra("Phone", phone)
+                    intent.putExtra("LicenseNumber", licenseNumber)
+                    intent.putExtra("LicenseExpDate", licenseExpDate)
+                    startActivity(intent)
                 }
             }
-
-            if (licenseNumber.isEmpty()) {
-                licenseNumberInput.error = getString(R.string.license_number_error)
-                return@setOnClickListener
-            }
-
-            if (!licenseExpDate.matches(Regex("\\d{1,2}/\\d{1,2}/\\d{4}"))) {
-                licenseExpInput.error = getString(R.string.license_exp_error)
-                return@setOnClickListener
-            }
-
-            val email = intent.getStringExtra("Email")
-            val password = intent.getStringExtra("Password")
-
-            val intent = Intent(this, RegisterSummaryActivity::class.java)
-            intent.putExtra("Email", email)
-            intent.putExtra("Password", password)
-            intent.putExtra("Name", name)
-            intent.putExtra("Surname", surname)
-            intent.putExtra("Phone", phone)
-            intent.putExtra("LicenseNumber", licenseNumber)
-            intent.putExtra("LicenseExpDate", licenseExpDate)
-            startActivity(intent)
         }
     }
 
