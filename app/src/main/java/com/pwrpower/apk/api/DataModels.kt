@@ -30,3 +30,16 @@ data class UserDataModel(
     val licenseNumber: String,
     val licenseExpiration: String
 )
+
+data class PasswordModel(
+    val accountId: Int,
+    val password: String
+)
+
+data class NewPasswordModel(
+    val password: String
+)
+
+data class NewEmailModel(
+    val email: String
+)

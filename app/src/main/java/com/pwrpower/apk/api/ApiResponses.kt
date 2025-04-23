@@ -40,3 +40,21 @@ data class UpdateUserResponse(
     val message: String,
     val errors: List<String>? = null
 )
+
+data class VerifyPasswordResponse(
+    val success: Boolean,
+    val message: String,
+    val errors: List<String>? = null
+)
+
+data class ChangePasswordResponse(
+    val success: Boolean,
+    val message: String,
+    val errors: List<String>? = null
+)
+
+data class ChangeEmailResponse(
+    val success: Boolean,
+    val message: String,
+    val errors: List<String>? = null
+)

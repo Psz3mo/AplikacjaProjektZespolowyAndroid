@@ -76,12 +76,12 @@ class SettingsFragment : Fragment() {
 
         val changePasswordButton = view.findViewById<ConstraintLayout>(R.id.settingsLayoutChangePassword)
         changePasswordButton.setOnClickListener {
-            //parentFragmentManager.beginTransaction().replace(R.id.container, LanguageFragment()).addToBackStack(null).commit()
+            parentFragmentManager.beginTransaction().replace(R.id.container, ChangePasswordFragment()).addToBackStack(null).commit()
         }
 
         val changeEmailButton = view.findViewById<ConstraintLayout>(R.id.settingsLayoutChangeEmail)
         changeEmailButton.setOnClickListener {
-            //parentFragmentManager.beginTransaction().replace(R.id.container, LanguageFragment()).addToBackStack(null).commit()
+            parentFragmentManager.beginTransaction().replace(R.id.container, ChangeEmailFragment()).addToBackStack(null).commit()
         }
 
         val balanceButton = view.findViewById<ConstraintLayout>(R.id.settingsLayoutBalance)

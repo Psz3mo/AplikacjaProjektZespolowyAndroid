@@ -95,6 +95,24 @@
     <string name="save">Save</string>
     <string name="edit_profile_success">Profile updated successfully</string>
 
+    <!-- ChangePasswordFragment -->
+    <string name="change_password">Change password</string>
+    <string name="password_hint">Old password</string>
+    <string name="type_old_password">Enter old password</string>
+    <string name="type_new_password">Enter new password</string>
+    <string name="check_button">Check</string>
+    <string name="incorrect_password">Incorrect password</string>
+    <string name="password_error_1">Password cannot be empty</string>
+
+    <!-- UpdatePasswordFragment -->
+    <string name="password_change_success">Password changed successfully</string>
+    <string name="password_change_error">New password cannot be the same as the old password</string>
+
+    <!-- ChangeEmailFragment -->
+    <string name="change_email">Change email</string>
+    <string name="change_email_successful">Change email successful</string>
+    <string name="change_email_error">Email already registered</string>
+
     <!-- Others -->
     <string name="next">Next</string>
 

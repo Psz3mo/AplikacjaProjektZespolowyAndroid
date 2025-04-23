@@ -25,4 +25,13 @@ interface ApiService {
 
     @PUT("users/user/{id}")
     fun updateUserData(@Path("id") userId: Int, @Body user: UserDataModel): Call<UpdateUserResponse>
+
+    @POST("users/verifyPassword")
+    fun verifyPassword(@Body password: PasswordModel): Call<VerifyPasswordResponse>
+
+    @PUT("users/changePassword/{id}")
+    fun changePassword(@Path("id") userId: Int, @Body newPassword: NewPasswordModel): Call<ChangePasswordResponse>
+
+    @PUT("users/changeEmail/{id}")
+    fun changeEmail(@Path("id") userId: Int, @Body newEmail: NewEmailModel): Call<ChangeEmailResponse>
 }
