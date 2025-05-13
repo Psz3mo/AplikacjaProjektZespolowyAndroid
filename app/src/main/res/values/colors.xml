@@ -6,6 +6,7 @@
     <color name="accent">#7f4bd6</color>
     <color name="background">#ffffff</color>
     <color name="onBackground">#362162</color>
+    <color name="onBackgroundVariant">#685C7E</color>
     <color name="onPrimary">#ffffff</color>
     <color name="surface">#f5efff</color>
     <color name="mtrl_textinput_default_box_stroke_color" tools:ignore="PrivateResource">@color/primary</color>
@@ -18,4 +19,7 @@
     <color name="text_gray">#202326</color>
     <color name="red_error">#F60707</color>
     <color name="green_check">#00BA3B</color>
+
+    <color name="red_icon">#FF5050</color>
+    <color name="green_icon">#1EA049</color>
 </resources>

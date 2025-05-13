@@ -11,27 +11,36 @@ interface ApiService {
     @POST("users/register")
     fun registerUser(@Body user: UserModel): Call<RegisterResponse>
 
-    @POST("users/checkEmail")
+    @POST("users/check-email")
     fun checkEmail(@Body email: EmailModel): Call<CheckEmailResponse>
 
-    @POST("users/checkPhone")
+    @POST("users/check-phone")
     fun checkPhone(@Body phone: PhoneModel): Call<CheckPhoneResponse>
 
     @POST("users/login")
     fun loginUser(@Body login: LoginModel): Call<LoginResponse>
 
-    @GET("users/user/{id}")
+    @GET("users/{id}")
     fun getUserData(@Path("id") userId: Int): Call<UserDataResponse>
 
-    @PUT("users/user/{id}")
+    @PUT("users/{id}")
     fun updateUserData(@Path("id") userId: Int, @Body user: UserDataModel): Call<UpdateUserResponse>
 
-    @POST("users/verifyPassword")
+    @POST("users/verify-password")
     fun verifyPassword(@Body password: PasswordModel): Call<VerifyPasswordResponse>
 
-    @PUT("users/changePassword/{id}")
+    @PUT("users/{id}/change-password")
     fun changePassword(@Path("id") userId: Int, @Body newPassword: NewPasswordModel): Call<ChangePasswordResponse>
 
-    @PUT("users/changeEmail/{id}")
+    @PUT("users/{id}/change-email")
     fun changeEmail(@Path("id") userId: Int, @Body newEmail: NewEmailModel): Call<ChangeEmailResponse>
+
+    @GET("users/{id}/balance")
+    fun getUserBalance(@Path("id") userId: Int): Call<BalanceResponse>
+
+    @POST("users/{id}/add-payment")
+    fun addPayment(@Path("id") userId: Int, @Body payment: PaymentModel): Call<AddPaymentResponse>
+
+    @GET("users/{id}/transactions")
+    fun getUserTransactions(@Path("id") userId: Int): Call<TransactionsResponse>
 }

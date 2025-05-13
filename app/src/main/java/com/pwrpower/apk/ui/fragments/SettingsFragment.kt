@@ -86,7 +86,7 @@ class SettingsFragment : Fragment() {
 
         val balanceButton = view.findViewById<ConstraintLayout>(R.id.settingsLayoutBalance)
         balanceButton.setOnClickListener {
-            //parentFragmentManager.beginTransaction().replace(R.id.container, LanguageFragment()).addToBackStack(null).commit()
+            parentFragmentManager.beginTransaction().replace(R.id.container, BalanceFragment()).addToBackStack(null).commit()
         }
 
         val historyButton = view.findViewById<ConstraintLayout>(R.id.settingsLayoutHistory)

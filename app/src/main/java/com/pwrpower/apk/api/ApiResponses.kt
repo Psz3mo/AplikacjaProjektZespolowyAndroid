@@ -58,3 +58,24 @@ data class ChangeEmailResponse(
     val message: String,
     val errors: List<String>? = null
 )
+
+data class BalanceResponse(
+    val success: Boolean,
+    val message: String,
+    val errors: List<String>? = null,
+    val balance: Double? = null
+)
+
+data class AddPaymentResponse(
+    val success: Boolean,
+    val message: String,
+    val errors: List<String>? = null,
+    val status: Int = 0
+)
+
+data class TransactionsResponse(
+    val success: Boolean,
+    val message: String,
+    val errors: List<String>? = null,
+    val transactions: List<Transaction>? = null
+)

@@ -43,3 +43,16 @@ data class NewPasswordModel(
 data class NewEmailModel(
     val email: String
 )
+
+data class PaymentModel(
+    val amount: Double,
+    val description: String
+)
+
+data class Transaction(
+    val amount: Double,
+    val type: String,
+    val created_at: String,
+    val description: String,
+    val status: Int
+)

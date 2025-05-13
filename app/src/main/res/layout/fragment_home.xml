@@ -1,13 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
     tools:context=".ui.fragments.HomeFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Home fragment" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="150dp">
 
-</FrameLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/mainUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/welcome_text"
+                    android:textSize="24sp"
+                    android:textColor="@color/onBackground"
+                    android:fontFamily="@font/roboto_bold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/balanceAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/gradient_button"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        android:id="@+id/userMoneyAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/balance"
+                        android:paddingVertical="5dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="0dp"
+                        android:textSize="20sp"
+                        android:textColor="@color/onPrimary"
+                        android:fontFamily="@font/roboto_bold"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/userMoneyAmountIcon"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="@string/plus_icon"
+                        android:src="@drawable/plus_icon"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/userMoneyAmount"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:tint="@color/onPrimary" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gradient_border"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="10dp">
+
+                <TextView
+                    android:id="@+id/currentRentalText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/current_rental"
+                    android:textSize="20sp"
+                    android:textColor="@color/onBackground"
+                    android:fontFamily="@font/roboto_bold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <ImageView
+                    android:id="@+id/currentRentalPlusIcon"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="@string/plus_icon"
+                    android:src="@drawable/plus_icon"
+                    app:tint="@color/onBackground"
+                    app:layout_constraintTop_toBottomOf="@id/currentRentalText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/currentRentalText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="16dp"
+                    android:textAlignment="center"
+                    android:text="@string/empty_rental_text"
+                    android:textSize="16sp"
+                    android:textColor="@color/onBackgroundVariant"
+                    android:fontFamily="@font/roboto"
+                    app:layout_constraintTop_toBottomOf="@id/currentRentalPlusIcon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gradient_border"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="10dp">
+
+                <TextView
+                    android:id="@+id/historyRentalText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/rental_history"
+                    android:textSize="20sp"
+                    android:textColor="@color/onBackground"
+                    android:fontFamily="@font/roboto_bold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <ImageView
+                    android:id="@+id/historyRentalPlusIcon"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="@string/clock_icon"
+                    android:src="@drawable/clock_icon"
+                    app:tint="@color/onBackground"
+                    app:layout_constraintTop_toBottomOf="@id/historyRentalText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/historyRentalText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="16dp"
+                    android:textAlignment="center"
+                    android:text="@string/empty_history_text"
+                    android:textSize="16sp"
+                    android:textColor="@color/onBackgroundVariant"
+                    android:fontFamily="@font/roboto"
+                    app:layout_constraintTop_toBottomOf="@id/historyRentalPlusIcon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+</ScrollView>

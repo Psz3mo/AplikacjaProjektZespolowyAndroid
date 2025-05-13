@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/transactionIcon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/danger_icon"
+        android:contentDescription="@string/danger_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/transactionDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/description_transaction"
+        android:textColor="@color/onBackground"
+        android:textSize="16sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/transactionIcon" />
+
+    <TextView
+        android:id="@+id/transactionStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="3dp"
+        android:text="@string/transaction_status"
+        android:textColor="@color/onBackground"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@id/transactionDescription"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/transactionDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/transaction_date"
+        android:textColor="@color/onBackgroundVariant"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@id/transactionStatus"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/transactionAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/balance"
+        android:textColor="@color/onBackground"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/transactionDescription"
+        app:layout_constraintStart_toEndOf="@id/transactionIcon" />
+
+    <View
+        android:id="@+id/transactionDivider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/gradient_button"
+        app:layout_constraintTop_toBottomOf="@id/transactionDate" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,4 +26,20 @@
         <item name="endIconTint">@color/onBackground</item>
     </style>
 
+    <style name="KeypadButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_rowWeight">1</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/onBackground</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="GradientSpinnerStyle" parent="Widget.AppCompat.Spinner">
+        <item name="android:background">@drawable/gradient_border</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
 </resources>

@@ -113,6 +113,47 @@
     <string name="change_email_successful">Change email successful</string>
     <string name="change_email_error">Email already registered</string>
 
+    <!-- HomeFragment -->
+    <string name="welcome_text">Hello,\nUsername</string>
+    <string name="balance">0,00 zł</string>
+    <string name="current_rental">Current rental</string>
+    <string name="empty_rental_text">Currently, you are not renting anything\nClick to rent something</string>
+    <string name="rental_history">Rental history</string>
+    <string name="empty_history_text">You currently have no rental history</string>
+
+    <!-- BalanceFragment -->
+    <string name="your_balance">Your balance</string>
+    <string name="transactions">Transactions:</string>
+    <string name="description_transaction">Deposit funds using Google Pay</string>
+    <string name="transaction_status">Rejected</string>
+    <string name="transaction_date">12:00 01–10–2023</string>
+
+    <!-- AddFundsFragment -->
+    <string name="add_funds">Add funds</string>
+    <string name="funds_to_add">0 zł</string>
+    <string name="payment_method">Payment method:</string>
+    <string name="payment_method_1">Credit card</string>
+    <string name="payment_method_2">PayPal</string>
+    <string name="payment_method_3">Blik</string>
+    <string name="payment_method_4">Google Pay</string>
+    <string name="payment_method_5">Apple Pay</string>
+    <string name="keyboard_1">1</string>
+    <string name="keyboard_2">2</string>
+    <string name="keyboard_3">3</string>
+    <string name="keyboard_4">4</string>
+    <string name="keyboard_5">5</string>
+    <string name="keyboard_6">6</string>
+    <string name="keyboard_7">7</string>
+    <string name="keyboard_8">8</string>
+    <string name="keyboard_9">9</string>
+    <string name="keyboard_0">0</string>
+    <string name="keyboard_backspace">←</string>
+    <string name="keyboard_ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="add_funds_success">Funds added successfully</string>
+    <string name="add_funds_using">Deposit funds using</string>
+    <string name="add_funds_error">The minimum amount to be deposited is 20 zł</string>
+
     <!-- Others -->
     <string name="next">Next</string>
 
@@ -130,6 +171,10 @@
     <string name="world_icon">World Icon</string>
     <string name="balance_icon">Balance Icon</string>
     <string name="history_icon">History Icon</string>
+    <string name="plus_icon">Plus Icon</string>
+    <string name="clock_icon">Clock Icon</string>
+    <string name="danger_icon">Warning Icon</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

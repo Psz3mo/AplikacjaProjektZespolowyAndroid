@@ -6,6 +6,7 @@
     <color name="accent">#bca1f8</color>
     <color name="background">#0f0a1a</color>
     <color name="onBackground">#e3dbf5</color>
+    <color name="onBackgroundVariant">#9B97A9</color>
     <color name="onPrimary">#e3dbf5</color>
     <color name="surface">#251b3f</color>
 
