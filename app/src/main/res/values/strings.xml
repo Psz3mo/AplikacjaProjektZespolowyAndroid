@@ -154,6 +154,55 @@
     <string name="add_funds_using">Deposit funds using</string>
     <string name="add_funds_error">The minimum amount to be deposited is 20 zł</string>
 
+    <!-- SearchFragment -->
+    <string name="carName">Car Name</string>
+    <string name="carCost">Cost: 0.00 zł / min</string>
+    <string name="carRating">No reviews</string>
+    <string name="noDataShow">No results</string>
+    <string name="searchBar">Search…</string>
+    <string name="sortAlphabetically">Alphabetically</string>
+    <string name="sortPriceLow">Price: Low to High</string>
+    <string name="sortPriceHigh">Price: High to Low</string>
+    <string name="sortRatingLow">Rating: Low to High</string>
+    <string name="sortRatingHigh">Rating: High to Low</string>
+    <string name="sortNearest">Nearest</string>
+    <string name="sortFarthest">Farthest</string>
+    <string name="sort">Sort</string>
+    <string name="confirm">Confirm</string>
+    <string name="reset">Reset</string>
+    <string name="cost1">Cost: </string>
+    <string name="cost2">zł / min</string>
+    <string name="liters">l/100km</string>
+
+    <!-- CarInfoFragment -->
+    <string name="car_info">Car Info</string>
+    <string name="fuel_type">Diesel</string>
+    <string name="car_paint">Green</string>
+    <string name="car_seats">5</string>
+    <string name="car_year">2023</string>
+    <string name="car_burns">5.0 l/100km</string>
+    <string name="connect_with_car">Connect to the car</string>
+    <string name="car_comments">Comments</string>
+    <string name="car_comments_username">User name</string>
+    <string name="car_comments_text">This is a review text.</string>
+    <string name="car_comments_date">2024-03-18 14:45</string>
+    <string name="show_reviews">Show reviews</string>
+    <string name="no_comments">There are no reviews yet</string>
+    <string name="car_is_null">Car info is null</string>
+    <string name="permission_req">Permissions required</string>
+    <string name="permission_req_text">To connect to a vehicle, the app needs access to Bluetooth and Location.</string>
+    <string name="permission_req_button1">Grant permissions</string>
+    <string name="permission_req_button2">Cancel</string>
+    <string name="bluetooth_on">Bluetooth on</string>
+    <string name="bluetooth_off">Bluetooth off</string>
+
+    <!-- BleManager -->
+    <string name="ble_manager_error1">Bluetooth scan failed:</string>
+    <string name="ble_manager_error2">The vehicle was not found</string>
+    <string name="ble_manager_error3">Failed to connect to the vehicle</string>
+    <string name="ble_manager_error4">Command write error</string>
+    <string name="ble_manager_error5">Characteristics not ready</string>
+
     <!-- Others -->
     <string name="next">Next</string>
 
@@ -174,6 +223,16 @@
     <string name="plus_icon">Plus Icon</string>
     <string name="clock_icon">Clock Icon</string>
     <string name="danger_icon">Warning Icon</string>
+    <string name="car_placeholder">Car Placeholder</string>
+    <string name="fuel_icon">Fuel Icon</string>
+    <string name="paint_icon">Paint Icon</string>
+    <string name="date_icon">Date Icon</string>
+    <string name="chair_icon">Chair Icon</string>
+    <string name="flame_icon">Flame Icon</string>
+
+    <!-- Menu -->
+    <string name="searchMenuIcon">Search</string>
+    <string name="filterMenuIcon">Filter</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

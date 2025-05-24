@@ -79,3 +79,30 @@ data class TransactionsResponse(
     val errors: List<String>? = null,
     val transactions: List<Transaction>? = null
 )
+
+data class CarsResponse(
+    val success: Boolean,
+    val message: String,
+    val errors: List<String>? = null,
+    val cars: List<Cars>? = null
+)
+
+data class CarInfoResponse(
+    val success: Boolean,
+    val message: String,
+    val errors: List<String>? = null,
+    val car: Car? = null
+)
+
+data class GetReviewsResponse(
+    val success: Boolean,
+    val message: String,
+    val errors: List<String>? = null,
+    val reviews: List<Review>? = null
+)
+
+data class SendLocationResponse(
+    val success: Boolean,
+    val message: String,
+    val errors: List<String>? = null
+)

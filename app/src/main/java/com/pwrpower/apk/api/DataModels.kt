@@ -1,5 +1,7 @@
 package com.pwrpower.apk.api
 
+import android.provider.ContactsContract.CommonDataKinds.Photo
+
 data class UserModel(
     val email: String,
     val password: String,
@@ -55,4 +57,42 @@ data class Transaction(
     val created_at: String,
     val description: String,
     val status: Int
+)
+
+data class Cars(
+    val id: Int,
+    val name: String,
+    val price: Double,
+    val photo: String,
+    val rating: Double
+)
+
+data class Car(
+    val brand: String,
+    val model: String,
+    val price: Double,
+    val photo: String,
+    val rating: Double,
+    val color: String,
+    val year: Int,
+    val engineCapacity: Double,
+    val fuelType: String,
+    val fuelConsumption: Double,
+    val seats: Int,
+    val bluetoothName: String,
+    val serviceUUID: String,
+    val controlUUID: String,
+    val gpsUUID: String
+)
+
+data class Review(
+    val rating: Double,
+    val review: String,
+    val date: String,
+    val name: String
+)
+
+data class LocationModel(
+    val latitude: Double,
+    val longitude: Double
 )

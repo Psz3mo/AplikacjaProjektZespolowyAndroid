@@ -43,4 +43,16 @@ interface ApiService {
 
     @GET("users/{id}/transactions")
     fun getUserTransactions(@Path("id") userId: Int): Call<TransactionsResponse>
+
+    @GET("cars")
+    fun getCars(): Call<CarsResponse>
+
+    @GET("cars/{id}")
+    fun getCarDetails(@Path("id") carId: Int): Call<CarInfoResponse>
+
+    @GET("cars/{id}/reviews")
+    fun getReviews(@Path("id") carId: Int): Call<GetReviewsResponse>
+
+    @POST("cars/{id}/location")
+    fun sendCarLocation(@Path("id") carId: Int, @Body location: LocationModel): Call<SendLocationResponse>
 }

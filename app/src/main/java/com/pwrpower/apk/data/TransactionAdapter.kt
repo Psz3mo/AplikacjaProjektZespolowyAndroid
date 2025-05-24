@@ -12,9 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.pwrpower.apk.R
 import com.pwrpower.apk.api.Transaction
 import java.text.DecimalFormat
-import java.text.SimpleDateFormat
 import java.time.ZonedDateTime
-import java.util.Locale
 import java.time.format.DateTimeFormatter
 
 class TransactionAdapter(private val transactions: List<Transaction>) :
