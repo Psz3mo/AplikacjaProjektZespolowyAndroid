@@ -28,9 +28,11 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.pwrpower.apk.R
 import com.pwrpower.apk.api.CarInfoResponse
+import com.pwrpower.apk.api.CarStatusModel
 import com.pwrpower.apk.api.LocationModel
 import com.pwrpower.apk.api.RetrofitInstance
 import com.pwrpower.apk.api.SendLocationResponse
+import com.pwrpower.apk.api.UpdateCarStatusResponse
 import com.pwrpower.apk.ble.BleManager
 import com.pwrpower.apk.ui.bottomSheet.ReviewsBottomSheet
 import com.pwrpower.apk.ui.main.MainActivity
@@ -46,6 +48,9 @@ class CarInfoFragment : Fragment(), BleManager.BleCallback {
     private lateinit var serviceUUID: String
     private lateinit var controlUUID: String
     private lateinit var gpsUUID: String
+    private var controlFragment: ControlFragment? = null
+    private var carCostAmount: Double = 0.0
+    private var carNameValue: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -87,11 +92,34 @@ class CarInfoFragment : Fragment(), BleManager.BleCallback {
                 requestEnableLocation()
             }
             else if (hasPermissions()) {
-                try {
-                    bleManager.startScan(bluetoothName, serviceUUID, controlUUID, gpsUUID)
-                } catch (e: SecurityException) {
-                    infoPermissions()
-                }
+                AlertDialog.Builder(requireContext())
+                    .setTitle(getString(R.string.dialog_connecting1))
+                    .setMessage(getString(R.string.dialog_connecting2))
+                    .setPositiveButton(getString(R.string.dialog_connecting3)) { _, _ ->
+                        RetrofitInstance.api.updateCarStatus(arguments?.getString("carId")?.toInt() ?: 0,CarStatusModel("rented")).enqueue(object : Callback<UpdateCarStatusResponse> {
+                            override fun onResponse(call: Call<UpdateCarStatusResponse>, response: Response<UpdateCarStatusResponse>) {
+                                if (response.isSuccessful) {
+                                    if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_GRANTED) {
+                                        try {
+                                            bleManager.startScan(bluetoothName, serviceUUID, controlUUID, gpsUUID)
+                                        } catch (e: SecurityException) {
+                                            infoPermissions()
+                                        }
+                                    } else {
+                                        infoPermissions()
+                                    }
+                                } else {
+                                    Toast.makeText(requireContext(), "Error: ${response.message()}", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+
+                            override fun onFailure(call: Call<UpdateCarStatusResponse>, t: Throwable) {
+                                Toast.makeText(requireContext(), t.message, Toast.LENGTH_SHORT).show()
+                            }
+                        })
+                    }
+                    .setNegativeButton(getString(R.string.dialog_connecting4), null)
+                    .show()
             }
             else {
                 permissionLauncher.launch(requiredPermissions)
@@ -135,6 +163,9 @@ class CarInfoFragment : Fragment(), BleManager.BleCallback {
                         val seats: TextView = view.findViewById(R.id.car_seats)
                         val burns: TextView = view.findViewById(R.id.car_burns)
                         val year: TextView = view.findViewById(R.id.car_year)
+
+                        carCostAmount = car?.price ?: 0.0
+                        carNameValue = car?.brand + " " + car?.model
 
                         carName.text = car?.brand + " " + car?.model
                         carCost.text = getString(R.string.cost1) + " " + car?.price.toString() + " " + getString(R.string.cost2)
@@ -190,10 +221,19 @@ class CarInfoFragment : Fragment(), BleManager.BleCallback {
 
     override fun onConnected() {
         activity?.runOnUiThread {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.container, ControlFragment(bleManager))
+            controlFragment = ControlFragment(bleManager)
+            val bundle = Bundle()
+            bundle.putString("carId", arguments?.getString("carId") ?: "0")
+            bundle.putDouble("carCost", carCostAmount)
+            bundle.putString("carName", carNameValue)
+            controlFragment!!.arguments = bundle
+
+            requireActivity().supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.container, controlFragment!!)
                 .addToBackStack(null)
                 .commit()
+
         }
     }
 
@@ -210,6 +250,9 @@ class CarInfoFragment : Fragment(), BleManager.BleCallback {
                 }
             }
         })
+        requireActivity().runOnUiThread {
+            controlFragment?.updateMarkerPosition(parts[0].toDouble(), parts[1].toDouble())
+        }
     }
 
     override fun onError(msg: String) {

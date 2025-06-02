@@ -157,6 +157,24 @@ class BleManager (private val context: Context, private val bleCallback: BleCall
         bluetoothGatt?.close()
     }
 
+    @RequiresPermission(allOf = [
+        Manifest.permission.BLUETOOTH_CONNECT,
+        Manifest.permission.BLUETOOTH_SCAN
+    ])
+    fun disconnect() {
+        sendCommand("CLOSE")
+        bluetoothGatt?.let {
+            it.disconnect()
+            it.close()
+            bluetoothGatt = null
+        }
+        scanCallback?.let {
+            bluetoothAdapter.bluetoothLeScanner?.stopScan(it)
+            scanCallback = null
+        }
+        timeoutRunnable?.let { handler.removeCallbacks(it) }
+    }
+
     interface BleCallback {
         fun onConnected()
         fun onGpsReceived(data: String)

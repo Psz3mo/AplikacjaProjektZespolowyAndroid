@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.SummaryRentFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/summary_rent_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Podsumowanie"
+                android:layout_marginVertical="16dp"
+                android:textColor="@color/onBackground"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:textSize="24sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/gradient_border"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pojazd:"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/onBackgroundVariant"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/carName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Volvo cx5"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/onBackground"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Wynajem od:"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/onBackgroundVariant"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/dateFrom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="15:36  12.10.2023"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/onBackground"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Wynajem do:"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/onBackgroundVariant"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/dateTo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="17:13  12.10.2023"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/onBackground"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cennik:"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/onBackgroundVariant"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/carPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="15,00 zł / min"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/onBackground"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Łącznie:"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/onBackgroundVariant"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/totalPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2100,00 zł (140 minut)"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/onBackground"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Status płatności:"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/onBackgroundVariant"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/paymentStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Opłacona"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/onBackground"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:id="@+id/paymentError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Brak wystarczających środków na koncie, aby opłacić przejazd. Dodaj je jak najszybciej i opłać przejazd."
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"
+                android:textColor="@color/red_error"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="16sp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/rateRideButton"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/roboto_bold"
+                app:backgroundTint="@null"
+                android:background="@drawable/gradient_button"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="20dp"
+                android:paddingVertical="10dp"
+                android:text="Oceń przejazd"
+                android:textAllCaps="true"
+                tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/exitButton"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/roboto_bold"
+                app:backgroundTint="@null"
+                android:background="@drawable/gradient_button"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:paddingVertical="10dp"
+                android:text="Wyjdź"
+                android:layout_marginBottom="80dp"
+                android:textAllCaps="true"
+                tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

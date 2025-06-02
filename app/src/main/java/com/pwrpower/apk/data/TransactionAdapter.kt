@@ -46,6 +46,7 @@ class TransactionAdapter(private val transactions: List<Transaction>) :
                 holder.icon.setColorFilter(ContextCompat.getColor(holder.itemView.context, R.color.green_icon), PorterDuff.Mode.SRC_IN)
             } else {
                 holder.icon.setImageResource(R.drawable.car_icon)
+                holder.icon.setColorFilter(ContextCompat.getColor(holder.itemView.context, R.color.onBackground), PorterDuff.Mode.SRC_IN)
             }
         } else {
             holder.status.text = "Rejected"

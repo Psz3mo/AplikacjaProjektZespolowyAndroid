@@ -96,3 +96,15 @@ data class LocationModel(
     val latitude: Double,
     val longitude: Double
 )
+
+data class CarStatusModel(
+    val status: String
+)
+
+data class RentDetailsModel(
+    val carId: Int,
+    val startDate: String,
+    val endDate: String,
+    val rentCost: Double,
+    val paid: Int
+)

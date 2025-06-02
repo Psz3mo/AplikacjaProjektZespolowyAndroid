@@ -195,6 +195,10 @@
     <string name="permission_req_button2">Cancel</string>
     <string name="bluetooth_on">Bluetooth on</string>
     <string name="bluetooth_off">Bluetooth off</string>
+    <string name="dialog_connecting1">Confirmation</string>
+    <string name="dialog_connecting2">From that point on, the rental payments will be charged. Do you want to continue?</string>
+    <string name="dialog_connecting3">Connect</string>
+    <string name="dialog_connecting4">Cancel</string>
 
     <!-- BleManager -->
     <string name="ble_manager_error1">Bluetooth scan failed:</string>
@@ -202,6 +206,17 @@
     <string name="ble_manager_error3">Failed to connect to the vehicle</string>
     <string name="ble_manager_error4">Command write error</string>
     <string name="ble_manager_error5">Characteristics not ready</string>
+
+    <!-- ControlFragment -->
+    <string name="time">00:00:00</string>
+    <string name="doors">Doors</string>
+    <string name="open_doors">Open</string>
+    <string name="close_doors">Close</string>
+    <string name="end_rental">Finish rental</string>
+    <string name="dialog_end_rental1">Confirmation</string>
+    <string name="dialog_end_rental2">Are you sure you want to end the rental?</string>
+    <string name="dialog_end_rental3">End rental</string>
+    <string name="dialog_end_rental4">Cancel</string>
 
     <!-- Others -->
     <string name="next">Next</string>

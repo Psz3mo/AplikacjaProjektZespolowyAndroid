@@ -3,6 +3,7 @@ package com.pwrpower.apk.api
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.PATCH
 import retrofit2.http.POST
 import retrofit2.http.PUT
 import retrofit2.http.Path
@@ -55,4 +56,10 @@ interface ApiService {
 
     @POST("cars/{id}/location")
     fun sendCarLocation(@Path("id") carId: Int, @Body location: LocationModel): Call<SendLocationResponse>
+
+    @PATCH("cars/{id}/status")
+    fun updateCarStatus(@Path("id") carId: Int, @Body status: CarStatusModel): Call<UpdateCarStatusResponse>
+
+    @POST("users/{id}/rent")
+    fun rentCar(@Path("id") userId: Int, @Body rentDetails: RentDetailsModel): Call<RentResponse>
 }

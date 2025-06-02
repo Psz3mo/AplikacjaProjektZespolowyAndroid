@@ -106,3 +106,15 @@ data class SendLocationResponse(
     val message: String,
     val errors: List<String>? = null
 )
+
+data class UpdateCarStatusResponse(
+    val success: Boolean,
+    val message: String,
+    val errors: List<String>? = null
+)
+
+data class RentResponse(
+    val success: Boolean,
+    val message: String,
+    val errors: List<String>? = null
+)
